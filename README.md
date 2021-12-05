@@ -19,11 +19,21 @@ Your app is ready to be deployed!
 
 #
 
-## Planned features
+## Planned App Features
 
-1.  - [ ] Login/Registration.
-2.  - [ ] Create post => Create post using multiple photos and a caption.
-3.  - [ ] User profile page => User should be able to see his/her own profile page and other's profile as well.
-4.  - [ ] Follow people => See list of people to follow and follow them.
-5.  - [ ] Timeline/Homepage => See pics of people you follow.
-6.  - [ ] Post engagements => Like and comment on the post. Reply on the comments.
+1.  -   [ ] Login/Registration.
+2.  -   [ ] Create post => Create post using multiple photos and a caption.
+3.  -   [ ] User profile page => User should be able to see his/her own profile page and other's profile as well.
+4.  -   [ ] Follow people => See list of people to follow and follow them.
+5.  -   [ ] Timeline/Homepage => See pics of people you follow.
+6.  -   [ ] Post engagements => Like and comment on the post. Reply on the comments.
+
+#
+
+## Tech setup
+
+1.  - [x] Linting - esLint, Airbnb style guide
+2.  - [x] Prettier
+3.  - [ ] Styling - Styled Componenets
+4.  - [ ] Pre push/commit checks
+5.  - [ ] Why did you render
