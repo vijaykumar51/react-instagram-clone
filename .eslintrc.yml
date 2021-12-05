@@ -7,11 +7,14 @@ extends:
 parserOptions:
     ecmaFeatures:
         jsx: true
-    ecmaVersion: 13
+    ecmaVersion: 9
     sourceType: module
 plugins:
     - react
 rules:
+    max-len:
+        - 2
+        - 140
     comma-dangle: 0
     no-tabs: 0
     react/jsx-indent:
@@ -21,6 +24,8 @@ rules:
         - error
         - tab
     react/react-in-jsx-scope: off
+    react/jsx-one-expression-per-line:
+        - 0
     react/jsx-filename-extension:
         - 1
         - extensions:
@@ -28,5 +33,11 @@ rules:
               - .jsx
     object-curly-newline: 0
     react/function-component-definition:
-        - 2
-        - namedComponenets: function-declaration
+        - 0
+        - namedComponenets:
+              - function-declaration
+              - function-expression
+              - arrow-function
+    jsx-quotes:
+        - error
+        - prefer-single

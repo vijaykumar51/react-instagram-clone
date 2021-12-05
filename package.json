@@ -6,13 +6,15 @@
 		"@testing-library/jest-dom": "^5.16.0",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
+		"@welldone-software/why-did-you-render": "^6.2.3",
+		"craco": "0.0.3",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-scripts": "4.0.3",
 		"web-vitals": "^1.1.2"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start": "cross-env DISABLE_NEW_JSX_TRANSFORM=true react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
@@ -38,7 +40,8 @@
 		]
 	},
 	"devDependencies": {
-		"eslint": "^8.4.0",
+		"cross-env": "^7.0.3",
+		"eslint": "^7.32.0",
 		"eslint-config-airbnb": "^19.0.2",
 		"eslint-plugin-import": "^2.25.3",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
