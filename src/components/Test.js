@@ -1,13 +1,12 @@
 import React from 'react';
 
-const TestComponent = () => {
-	console.log('Test componenet called');
+function TestComponent() {
 	return (
 		<div>
 			<h1>Hello user</h1>
 		</div>
 	);
-};
+}
 
 TestComponent.whyDidYouRender = true;
 
