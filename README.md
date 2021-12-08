@@ -24,9 +24,10 @@ Your app is ready to be deployed!
 1.  -   [ ] Login/Registration.
 2.  -   [ ] Create post => Create post using multiple photos and a caption.
 3.  -   [ ] User profile page => User should be able to see his/her own profile page and other's profile as well.
-4.  -   [ ] Follow people => See list of people to follow and follow them.
+4.  -   [ ] Follow people => See list of people to follow and option to follow them.
 5.  -   [ ] Timeline/Homepage => See pics of people you follow.
-6.  -   [ ] Post engagements => Like and comment on the post. Reply on the comments.
+6.  -   [ ] Search/Explore page => Search people, show post recommendations and option to view post on click.
+7.  -   [ ] Post engagements => Like and comment on the post. Reply on the comments.
 
 #
 

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 
-import './App.css';
-
 import TestComponent from './components/Test';
+
+import './App.css';
 
 function App() {
 	const [count, setCount] = useState(0);
-	const abc = 'xzy';
-	const pqr = 'sf';
-	const sdf = 'xdv';
 
 	const countHandler = () => {
 		setCount((prevCount) => prevCount + 1);
