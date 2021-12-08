@@ -1,6 +1,3 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/no-dynamic-require */
 module.exports = {
 	babel: {
 		loaderOptions: (babelLoaderOptions) => {
