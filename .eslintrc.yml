@@ -12,6 +12,7 @@ parserOptions:
 plugins:
     - react
 rules:
+    global-require: 0
     max-len:
         - 2
         - 140
@@ -36,7 +37,6 @@ rules:
         - 0
         - namedComponenets:
               - function-declaration
-              - function-expression
               - arrow-function
     jsx-quotes:
         - error

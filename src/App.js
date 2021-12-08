@@ -6,6 +6,7 @@ import TestComponent from './components/Test';
 
 function App() {
 	const [count, setCount] = useState(0);
+	const abc = 'xzy';
 
 	const countHandler = () => {
 		setCount((prevCount) => prevCount + 1);

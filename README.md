@@ -32,8 +32,7 @@ Your app is ready to be deployed!
 
 ## Tech setup
 
-1.  - [x] Linting - esLint, Airbnb style guide
-2.  - [x] Prettier
-3.  - [ ] Styling - Styled Componenets
-4.  - [ ] Pre push/commit checks
-5.  - [ ] Why did you render
+1.  -   [x] Code formatting - esLint, Airbnb style guide, prettier
+2.  -   [x] Styling - Styled Componenets
+3.  -   [x] Pre push/commit checks - husky
+4.  -   [x] Rendering debugging - whyDidYouRender
