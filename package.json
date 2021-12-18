@@ -27,7 +27,6 @@
 	"scripts": {
 		"start": "cross-env DISABLE_NEW_JSX_TRANSFORM=true react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"lint": "eslint . --ext .js",
 		"lint-fix": "eslint . --ext .js --fix",

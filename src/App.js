@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import TestComponent from './components/Test';
+import { LoginForm } from './components/features';
 
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
 			<button type='button' onClick={countHandler}>
 				Increase
 			</button>
-			<TestComponent />
+			<LoginForm />
 		</div>
 	);
 }
