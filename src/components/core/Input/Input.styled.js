@@ -30,13 +30,13 @@ export const StyledInput = styled.div`
 		transition: transform ease-out 0.2s;
 	}
 
-	&.focused .display-label {
+	&.edit-mode .display-label {
 		color: #666;
 		font-weight: bold;
 		transform: scale(0.83333) translateY(-12px);
 	}
 
-	&.focused input {
+	&.edit-mode input {
 		padding-top: 10px;
 	}
 `;

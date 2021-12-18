@@ -7,17 +7,27 @@ const defaultInputType = 'text';
 const allowedInputTypes = ['text', 'password'];
 
 function Input(props) {
-	const [isFocused, setIsFocused] = useState(false);
+	const [isInEditMode, setIsInEditMode] = useState(false);
 
-	const { type, label } = props;
+	const { type, label, value, onChange: onChangeHandler } = props;
 	const inputType = !type || !allowedInputTypes.includes(type) ? defaultInputType : type;
 
+	const handleInputChange = (event) => {
+		if (onChangeHandler) onChangeHandler(event.target.value);
+	};
+
 	return (
-		<StyledInput className={isFocused ? 'focused' : ''}>
+		<StyledInput className={isInEditMode ? 'edit-mode' : ''}>
 			{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
 			<label>
 				<span className='display-label'>{label}</span>
-				<input type={inputType} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} />
+				<input
+					type={inputType}
+					value={value}
+					onFocus={() => setIsInEditMode(true)}
+					onBlur={() => setIsInEditMode(!!value)}
+					onChange={handleInputChange}
+				/>
 			</label>
 		</StyledInput>
 	);
@@ -26,11 +36,16 @@ function Input(props) {
 Input.propTypes = {
 	type: PropTypes.string,
 	label: PropTypes.string,
+	value: PropTypes.string,
+	onChange: PropTypes.func.isRequired,
 };
 
 Input.defaultProps = {
 	type: '',
 	label: '',
+	value: '',
 };
+
+Input.whyDidYouRender = true;
 
 export default Input;
