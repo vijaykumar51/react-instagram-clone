@@ -6,7 +6,8 @@ function LoginForm() {
 	return (
 		<div>
 			<h2>Login Form 2</h2>
-			<Input />
+			<Input type='text' label='Email address' />
+			<Input type='password' label='Password' />
 		</div>
 	);
 }

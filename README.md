@@ -34,9 +34,9 @@ Your app is ready to be deployed!
 
 ## `Dev Flow`
 
--   [ ] Decide folder structure
+-   [x] Decide folder structure
 -   [ ] Develop core components
-    -   [ ] Input
+    -   [x] Input
     -   [ ] Button
     -   [ ] Link
     -   [ ] Image
@@ -62,3 +62,4 @@ Your app is ready to be deployed!
 2.  -   [x] Styling - Styled Componenets
 3.  -   [x] Pre push/commit checks - husky
 4.  -   [x] Rendering debugging - whyDidYouRender
+5.  -   [ ] Add storybook
