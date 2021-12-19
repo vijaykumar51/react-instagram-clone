@@ -38,6 +38,7 @@ Your app is ready to be deployed!
 -   [ ] Develop core components
     -   [x] Input
     -   [x] Button
+    -   [x] Icon
     -   [ ] Link
     -   [ ] Image
     -   [ ] Avatar

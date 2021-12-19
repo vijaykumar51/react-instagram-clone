@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Button, Input } from '../../core';
+import { Button, Icon, Input } from '../../core';
 import { StyledLoginForm } from './LoginForm.styled';
 
 function LoginForm() {
@@ -17,9 +17,11 @@ function LoginForm() {
 	};
 
 	return (
-		<StyledLoginForm>
-			<div className='login-form'>
-				<div>Instagram</div>
+		<StyledLoginForm className='login-form'>
+			<div className='logo-container'>
+				<Icon type='logo-large' className='logo-container' />
+			</div>
+			<div className='form-fields-container'>
 				<Input type='text' label='Email address' value={email} onChange={setEmail} />
 				<Input type='password' label='Password' value={password} onChange={setPassword} />
 				<Button size='full-bleed' disabled={!isFormValid} onClick={login}>
