@@ -30,9 +30,11 @@ export const StyledInput = styled.div`
 		transition: transform ease-out 0.2s;
 	}
 
+	&.edit-mode {
+		border-color: rgb(168, 168, 168);
+	}
+
 	&.edit-mode .display-label {
-		color: #666;
-		font-weight: bold;
 		transform: scale(0.83333) translateY(-12px);
 	}
 

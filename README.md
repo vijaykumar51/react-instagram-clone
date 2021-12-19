@@ -37,7 +37,7 @@ Your app is ready to be deployed!
 -   [x] Decide folder structure
 -   [ ] Develop core components
     -   [x] Input
-    -   [ ] Button
+    -   [x] Button
     -   [ ] Link
     -   [ ] Image
     -   [ ] Avatar

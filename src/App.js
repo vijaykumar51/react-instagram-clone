@@ -7,7 +7,6 @@ import './App.css';
 function App() {
 	return (
 		<div>
-			<h1>React instagram clone</h1>
 			<LoginForm />
 		</div>
 	);

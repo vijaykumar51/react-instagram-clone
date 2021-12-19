@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { StyledInput } from './Input.styled';
@@ -48,4 +48,4 @@ Input.defaultProps = {
 
 Input.whyDidYouRender = true;
 
-export default Input;
+export default memo(Input);

@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export { default as Input } from './Input/Input';
+export { default as Button } from './button/Button';
