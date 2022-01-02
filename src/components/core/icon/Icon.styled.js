@@ -10,4 +10,11 @@ export const StyledIcon = styled.span`
 		height: 51px;
 		width: 175px;
 	}
+
+	&.logo-small {
+		background-position: -440px -128px;
+		height: 52px;
+		width: 175px;
+		transform: scale(0.7);
+	}
 `;
