@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button, Icon, Input } from '../../core';
 import { StyledLoginForm } from './LoginForm.styled';
 
 function LoginForm() {
+	const naviagte = useNavigate();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [isFormValid, setIsFormValid] = useState(false);
@@ -14,6 +16,7 @@ function LoginForm() {
 
 	const login = () => {
 		console.log('Form submission', email, password);
+		naviagte('/profile');
 	};
 
 	return (

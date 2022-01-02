@@ -10,10 +10,10 @@ function Input(props) {
 	const [isInEditMode, setIsInEditMode] = useState(false);
 
 	const { type, label, value, onChange: onChangeHandler } = props;
-	const inputType = !type || !allowedInputTypes.includes(type) ? defaultInputType : type;
+	const inputType = type && allowedInputTypes.includes(type) ? type : defaultInputType;
 
 	const handleInputChange = (event) => {
-		if (onChangeHandler) onChangeHandler(event.target.value);
+		if (onChangeHandler) onChangeHandler(event?.target?.value);
 	};
 
 	return (

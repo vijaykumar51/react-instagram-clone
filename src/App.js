@@ -1,14 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { LoginForm } from './components/features';
-
-import './App.css';
+import { LoginPage, ProfilePage } from './pages';
+import { StyledApp } from './App.styled';
 
 function App() {
 	return (
-		<div>
-			<LoginForm />
-		</div>
+		<StyledApp>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<LoginPage />} />
+					<Route path='/profile' element={<ProfilePage />} />
+					<Route path='*' element={<LoginPage />} />
+				</Routes>
+			</BrowserRouter>
+		</StyledApp>
 	);
 }
 
