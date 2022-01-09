@@ -9,7 +9,8 @@ export const StyledHeader = styled.header`
 		align-items: center;
 		justify-content: space-between;
 		margin: auto;
-		width: 1000px;
+		padding: 12px 0;
+		width: 935px;
 	}
 
 	.navigation-container {

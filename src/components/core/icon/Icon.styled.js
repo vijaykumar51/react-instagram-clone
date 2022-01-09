@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledIcon = styled.span`
-	background-image: url('images/instagram-icons.png');
+	background-image: url('/images/instagram-icons.png');
 	background-size: 440px 411px;
 	cursor: pointer;
 	display: inline-block;
@@ -13,9 +13,10 @@ export const StyledIcon = styled.span`
 	}
 
 	&.logo-small {
-		background-position: -440px -128px;
-		height: 52px;
-		width: 175px;
-		transform: scale(0.6);
+		background-position: -269px -79px;
+		height: 31px;
+		width: 103px;
+		display: inline-block;
+		background-size: 261%;
 	}
 `;

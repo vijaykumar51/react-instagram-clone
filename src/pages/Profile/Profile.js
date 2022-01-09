@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 import { Header, ProfileOverview } from '../../components/features';
 
@@ -9,6 +10,9 @@ function Profile() {
 		<StyledProfile>
 			<Header />
 			<ProfileOverview />
+			<div className='all-posts-container'>
+				<Outlet />
+			</div>
 		</StyledProfile>
 	);
 }

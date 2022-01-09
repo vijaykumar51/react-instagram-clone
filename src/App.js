@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { LoginPage, ProfilePage } from './pages';
+import { LoginPage, ProfilePage, SavedPostsPage, TaggedPostsPage, UploadedPostsPage } from './pages';
 import { StyledApp } from './App.styled';
 
 function App() {
@@ -10,7 +10,11 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path='/' element={<LoginPage />} />
-					<Route path='/profile' element={<ProfilePage />} />
+					<Route path='/profile' element={<ProfilePage />}>
+						<Route path='' element={<UploadedPostsPage />} />
+						<Route path='saved' element={<SavedPostsPage />} />
+						<Route path='tagged' element={<TaggedPostsPage />} />
+					</Route>
 					<Route path='*' element={<LoginPage />} />
 				</Routes>
 			</BrowserRouter>
