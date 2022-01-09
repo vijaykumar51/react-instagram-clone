@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledIcon = styled.span`
 	background-image: url('images/instagram-icons.png');
 	background-size: 440px 411px;
+	cursor: pointer;
 	display: inline-block;
 
 	&.logo-large {
@@ -15,6 +16,6 @@ export const StyledIcon = styled.span`
 		background-position: -440px -128px;
 		height: 52px;
 		width: 175px;
-		transform: scale(0.7);
+		transform: scale(0.6);
 	}
 `;

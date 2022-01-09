@@ -7,6 +7,7 @@ import { ReactComponent as ActivitySvg } from './svg/activity.svg';
 import { ReactComponent as NewPostSvg } from './svg/new-post.svg';
 import { ReactComponent as ExploreSvg } from './svg/explore.svg';
 import { ReactComponent as UserAvatarSvg } from './svg/user-avatar.svg';
+import { ReactComponent as SettingsSvg } from './svg/settings.svg';
 
 import { StyledIcon } from './Icon.styled';
 
@@ -28,6 +29,9 @@ function Icon({ type }) {
 	}
 	if (type === 'avatar') {
 		return <UserAvatarSvg />;
+	}
+	if (type === 'settings') {
+		return <SettingsSvg />;
 	}
 
 	return <StyledIcon className={type} />;
