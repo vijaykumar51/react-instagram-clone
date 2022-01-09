@@ -8,6 +8,7 @@ export const StyledProfile = styled.div`
 		border-top: 1px solid rgb(219, 219, 219);
 		width: 935px;
 		margin: auto;
+		margin-top: 10px;
 	}
 
 	.posts-pages-nav nav {
@@ -25,7 +26,7 @@ export const StyledProfile = styled.div`
 		font-weight: 600;
 		gap: 5px;
 		margin-top: -1px;
-		padding: 10px;
+		padding: 15px 0;
 		text-decoration: none;
 	}
 

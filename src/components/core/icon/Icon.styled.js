@@ -19,4 +19,16 @@ export const StyledIcon = styled.span`
 		display: inline-block;
 		background-size: 261%;
 	}
+
+	&.post-likes {
+		background-position: -382px -225px;
+		height: 17px;
+		width: 19px;
+	}
+
+	&.post-comments {
+		background-position: -382px -264px;
+		height: 17px;
+		width: 19px;
+	}
 `;
