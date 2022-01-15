@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { LoginPage, ProfilePage, SavedPostsPage, TaggedPostsPage, UploadedPostsPage } from './pages';
 import { StyledApp } from './App.styled';
+import { Post } from './components/features';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 						<Route path='saved' element={<SavedPostsPage />} />
 						<Route path='tagged' element={<TaggedPostsPage />} />
 					</Route>
+					<Route path='post/:postId' element={<Post />} />
 					<Route path='*' element={<LoginPage />} />
 				</Routes>
 			</BrowserRouter>

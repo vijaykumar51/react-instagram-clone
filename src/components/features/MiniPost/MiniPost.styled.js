@@ -7,6 +7,7 @@ export const StyledMiniPost = styled.div`
 	.mini-post-image {
 		width: 100%;
 		height: 290px;
+		min-height: 200px;
 		object-fit: cover;
 	}
 
