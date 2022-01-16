@@ -31,4 +31,16 @@ export const StyledIcon = styled.span`
 		height: 17px;
 		width: 19px;
 	}
+
+	&.left-arrow-small {
+		background-position: -129px -97px;
+		height: 30px;
+		width: 30px;
+	}
+
+	&.right-arrow-small {
+		background-position: -160px -97px;
+		height: 30px;
+		width: 30px;
+	}
 `;

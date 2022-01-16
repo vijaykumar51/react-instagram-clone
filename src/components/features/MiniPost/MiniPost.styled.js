@@ -11,6 +11,13 @@ export const StyledMiniPost = styled.div`
 		object-fit: cover;
 	}
 
+	.multi-image-highlighter {
+		position: absolute;
+		margin: 8px 8px 0 0;
+		top: 0;
+		right: 0;
+	}
+
 	.overlay {
 		background-color: rgba(10, 10, 10, 0.4);
 		color: #fff;

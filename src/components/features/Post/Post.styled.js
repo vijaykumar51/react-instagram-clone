@@ -15,6 +15,7 @@ export const StyledPost = styled.article`
 		display: flex;
 		flex: 1;
 		max-height: 80vh;
+		min-height: 450px;
 		box-sizing: border-box;
 	}
 
@@ -30,22 +31,5 @@ export const StyledPost = styled.article`
 
 	.right-section {
 		flex-basis: 40%;
-	}
-
-	.image-container {
-		background: rgba(0, 0, 0, 1);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-		width: 100%;
-	}
-
-	.image-container .post-image {
-		width: 100%;
-		height: 100%;
-		max-width: 100%;
-		max-height: 100%;
-		object-fit: contain;
 	}
 `;

@@ -11,6 +11,7 @@ import { ReactComponent as SettingsSvg } from './svg/settings.svg';
 import { ReactComponent as NavLinkPostsSvg } from './svg/nav-link-posts.svg';
 import { ReactComponent as NavLinkSavedSvg } from './svg/nav-link-saved.svg';
 import { ReactComponent as NavLinkTaggedSvg } from './svg/nav-link-tagged.svg';
+import { ReactComponent as MultiImageSvg } from './svg/multi-image-highlighter.svg';
 
 import { StyledIcon } from './Icon.styled';
 
@@ -44,6 +45,9 @@ function Icon({ type }) {
 	}
 	if (type === 'nav-link-tagged') {
 		return <NavLinkTaggedSvg />;
+	}
+	if (type === 'multi-image') {
+		return <MultiImageSvg />;
 	}
 
 	return <StyledIcon className={type} />;

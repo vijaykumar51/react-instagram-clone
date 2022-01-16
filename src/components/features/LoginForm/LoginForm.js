@@ -15,7 +15,6 @@ function LoginForm() {
 	}, [email, password]);
 
 	const login = () => {
-		console.log('Form submission', email, password);
 		naviagte('/profile');
 	};
 
