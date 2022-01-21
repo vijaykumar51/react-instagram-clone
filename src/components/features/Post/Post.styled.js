@@ -7,6 +7,18 @@ export const StyledPost = styled.article`
 	height: 100vh;
 	box-sizing: border-box;
 	padding: 30px 100px;
+	position: relative;
+
+	.post-close-icon {
+		background: none;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		
+		
+	}
 
 	// TODO: Make this main-container as  a HOC
 

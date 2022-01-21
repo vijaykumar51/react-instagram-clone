@@ -1,10 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { StyledPost } from './Post.styled';
 import { getPostDetails } from '../../../services/temp-store';
-import { Carousel } from '../../core';
+import { Carousel, Icon } from '../../core';
 
 function Post() {
+	const navigate = useNavigate();
+
 	// TODO: check the portal usecase here
 	// const location = useLocation();
 	// console.log('state', location.state);
@@ -16,6 +18,9 @@ function Post() {
 
 	return (
 		<StyledPost>
+			<button className='post-close-icon' type='button' tabIndex={-1} onClick={() => navigate(-1)}>
+				<Icon type='post-close' />
+			</button>
 			{/* TODO: make this main-container as a HOC */}
 			<div className='main-container'>
 				<div className='section left-section'>

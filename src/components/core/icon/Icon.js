@@ -12,43 +12,23 @@ import { ReactComponent as NavLinkPostsSvg } from './svg/nav-link-posts.svg';
 import { ReactComponent as NavLinkSavedSvg } from './svg/nav-link-saved.svg';
 import { ReactComponent as NavLinkTaggedSvg } from './svg/nav-link-tagged.svg';
 import { ReactComponent as MultiImageSvg } from './svg/multi-image-highlighter.svg';
+import { ReactComponent as PostCloseSvg } from './svg/post-close.svg';
 
 import { StyledIcon } from './Icon.styled';
 
 function Icon({ type }) {
-	if (type === 'home') {
-		return <HomeSvg />;
-	}
-	if (type === 'direct-message') {
-		return <DirectMessageSvg />;
-	}
-	if (type === 'new-post') {
-		return <NewPostSvg />;
-	}
-	if (type === 'explore') {
-		return <ExploreSvg />;
-	}
-	if (type === 'activity') {
-		return <ActivitySvg />;
-	}
-	if (type === 'avatar') {
-		return <UserAvatarSvg />;
-	}
-	if (type === 'settings') {
-		return <SettingsSvg />;
-	}
-	if (type === 'nav-link-posts') {
-		return <NavLinkPostsSvg />;
-	}
-	if (type === 'nav-link-saved') {
-		return <NavLinkSavedSvg />;
-	}
-	if (type === 'nav-link-tagged') {
-		return <NavLinkTaggedSvg />;
-	}
-	if (type === 'multi-image') {
-		return <MultiImageSvg />;
-	}
+	if (type === 'home') return <HomeSvg />;
+	if (type === 'direct-message') return <DirectMessageSvg />;
+	if (type === 'new-post') return <NewPostSvg />;
+	if (type === 'explore') return <ExploreSvg />;
+	if (type === 'activity') return <ActivitySvg />;
+	if (type === 'avatar') return <UserAvatarSvg />;
+	if (type === 'settings') return <SettingsSvg />;
+	if (type === 'nav-link-posts') return <NavLinkPostsSvg />;
+	if (type === 'nav-link-saved') return <NavLinkSavedSvg />;
+	if (type === 'nav-link-tagged') return <NavLinkTaggedSvg />;
+	if (type === 'multi-image') return <MultiImageSvg />;
+	if (type === 'post-close') return <PostCloseSvg />;
 
 	return <StyledIcon className={type} />;
 }
