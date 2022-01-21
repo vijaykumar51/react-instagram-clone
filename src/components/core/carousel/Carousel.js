@@ -39,6 +39,15 @@ function Carousel({ imageData }) {
 					<Icon type='right-arrow-small' />
 				</button>
 			)}
+			<div className='post-count-dots'>
+				{imageData.length > 1
+					&& imageData.map((image, index) => (
+						<span
+							key={Math.random().toString(36).substr(2, 9)}
+							className={index === currentImageIndex ? 'post-dot current' : 'post-dot'}
+						/>
+					))}
+			</div>
 		</StyledCarousel>
 	);
 }

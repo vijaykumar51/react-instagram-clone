@@ -30,7 +30,7 @@ export const StyledMiniPost = styled.div`
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100%;
+		height: 290px;
 		width: 100%;
 	}
 

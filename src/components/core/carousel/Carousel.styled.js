@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledCarousel = styled.div`
-	display: flex;
-	align-items: center;
+	aspect-ratio: 1/1;
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -51,5 +50,27 @@ export const StyledCarousel = styled.div`
 	.arrow-icon-container.right-arrow {
 		top: 0;
 		right: 0;
+	}
+
+	.post-count-dots {
+		position: absolute;
+		bottom: 20px;
+		display: flex;
+		gap: 5px;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.post-count-dots .post-dot {
+		background: rgba(255, 255, 255, 0.4);
+		border-radius: 50%;
+		height: 6px;
+		width: 6px;
+	}
+
+	.post-count-dots .post-dot.current {
+		background: rgba(255, 255, 255, 1);
+		height: 7px;
+		width: 7px;
 	}
 `;
