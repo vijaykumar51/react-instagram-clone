@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledComment = styled.div`
 	display: flex;
 	gap: 18px;
-	padding-bottom: 16px;
+	padding-top: 16px;
 
 	.author {
 		font-size: 14px;

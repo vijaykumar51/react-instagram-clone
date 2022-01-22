@@ -43,7 +43,6 @@ export const StyledPost = styled.article`
 		background-color: #fff;
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
 		flex-basis: 40%;
 		min-width: 335px;
 	}
