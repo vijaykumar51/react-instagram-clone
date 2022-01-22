@@ -31,9 +31,14 @@ function Post() {
 				<div className='section right-section'>
 					<div className='header-container'><PostHeader /></div>
 					<div className='comment-section-container'><Comments comments={comments} /></div>
-					<div className='interaction-options'>Like comment</div>
-					<div className='stats-container'>Stats</div>
-					<div className='new-comment'>comment here</div>
+					<div className='post-interaction-options'>
+						<button type='button' aria-label='like-button'><Icon type='like' /></button>
+						<button type='button' aria-label='comment-button'><Icon type='comment' /></button>
+						<button type='button' aria-label='share-button'><Icon type='share' /></button>
+						<button type='button' aria-label='bookmark-button' className='bookmark-button'><Icon type='bookmark' /></button>
+					</div>
+					<div className='stats-container'>{post.uploadTime}</div>
+					<div className='new-comment'>Add a comment...</div>
 				</div>
 			</div>
 		</StyledPost>

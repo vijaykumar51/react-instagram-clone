@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 import ProfilePicture from '../profile-picture/ProfilePicture';
 import { StyledComment } from './Comment.styled';
 
 function Comment({ author, timestamp, text, replies }) {
-	const [showReplies, setShowReplies] = useState(true);
+	const [showReplies, setShowReplies] = useState(false);
 
 	const changeReplyShowStatus = () => setShowReplies((prevState) => !prevState);
 
@@ -17,23 +18,27 @@ function Comment({ author, timestamp, text, replies }) {
 				<div className='comment'>
 					<span className='author'>{author}</span>
 					<span className='text'>{text}</span>
-					<div className='comment-stats'>{timestamp}</div>
+					<div className='comment-stats'>
+						<Moment fromNow>{timestamp}</Moment>
+					</div>
 				</div>
 				{replies.length > 0 && replies.length && (
 					<button type='button' className='show-hide-reply-link' onClick={changeReplyShowStatus}>
 						<span>{showReplies ? 'Hide replies' : `View replies (${replies.length})`}</span>
 					</button>
 				)}
-				<div className='replies-container'>
-					{showReplies && replies.length > 0 && replies.map((reply) => (
-						<Comment
-							key={`${reply.commentBy}@${reply.timestamp}`}
-							author={reply.commentBy}
-							timestamp={timestamp}
-							text={reply.comment}
-						/>
-					))}
-				</div>
+				{showReplies && (
+					<div className='replies-container'>
+						{showReplies && replies.length > 0 && replies.map((reply) => (
+							<Comment
+								key={`${reply.commentBy}@${reply.timestamp}`}
+								author={reply.commentBy}
+								timestamp={timestamp}
+								text={reply.comment}
+							/>
+						))}
+					</div>
+				)}
 			</div>
 		</StyledComment>
 	);

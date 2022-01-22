@@ -14,6 +14,10 @@ import { ReactComponent as NavLinkTaggedSvg } from './svg/nav-link-tagged.svg';
 import { ReactComponent as MultiImageSvg } from './svg/multi-image-highlighter.svg';
 import { ReactComponent as PostCloseSvg } from './svg/post-close.svg';
 import { ReactComponent as PostActions } from './svg/post-actions.svg';
+import { ReactComponent as Like } from './svg/like.svg';
+import { ReactComponent as Comment } from './svg/comment.svg';
+import { ReactComponent as Share } from './svg/share.svg';
+import { ReactComponent as Bookmark } from './svg/bookmark.svg';
 
 import { StyledIcon } from './Icon.styled';
 
@@ -31,6 +35,10 @@ function Icon({ type }) {
 	if (type === 'multi-image') return <MultiImageSvg />;
 	if (type === 'post-close') return <PostCloseSvg />;
 	if (type === 'post-actions') return <PostActions />;
+	if (type === 'like') return <Like />;
+	if (type === 'comment') return <Comment />;
+	if (type === 'share') return <Share />;
+	if (type === 'bookmark') return <Bookmark />;
 
 	return <StyledIcon className={type} />;
 }
