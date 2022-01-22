@@ -8,6 +8,7 @@ export const StyledProfileOverview = styled.div`
 
 	.profile-picture-container {
 		display: flex;
+		justify-content: center;
 		width: 300px;
 	}
 `;

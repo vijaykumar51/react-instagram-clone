@@ -14,10 +14,8 @@ export const StyledPost = styled.article`
 		border: none;
 		cursor: pointer;
 		position: absolute;
-		top: 20px;
 		right: 20px;
-		
-		
+		top: 20px;
 	}
 
 	// TODO: Make this main-container as  a HOC
@@ -42,6 +40,7 @@ export const StyledPost = styled.article`
 	}
 
 	.right-section {
+		background-color: #fff;
 		flex-basis: 40%;
 	}
 `;

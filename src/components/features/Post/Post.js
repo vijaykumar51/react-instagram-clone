@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { StyledPost } from './Post.styled';
 import { getPostDetails } from '../../../services/temp-store';
-import { Carousel, Icon } from '../../core';
+import { Carousel, Icon, PostHeader } from '../../core';
 
 function Post() {
 	const navigate = useNavigate();
@@ -27,6 +27,7 @@ function Post() {
 					<Carousel imageData={post.images} />
 				</div>
 				<div className='section right-section'>
+					<PostHeader />
 					{post.uploadTime}
 					<br />
 					{JSON.stringify(post.images)}

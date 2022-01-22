@@ -3,5 +3,7 @@
 	"editor.tabSize": 2,
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
-	"prettier.useTabs": true
+	"prettier.useTabs": true,
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"eslint.format.enable": true
 }

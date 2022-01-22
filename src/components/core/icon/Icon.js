@@ -13,6 +13,7 @@ import { ReactComponent as NavLinkSavedSvg } from './svg/nav-link-saved.svg';
 import { ReactComponent as NavLinkTaggedSvg } from './svg/nav-link-tagged.svg';
 import { ReactComponent as MultiImageSvg } from './svg/multi-image-highlighter.svg';
 import { ReactComponent as PostCloseSvg } from './svg/post-close.svg';
+import { ReactComponent as PostActions } from './svg/post-actions.svg';
 
 import { StyledIcon } from './Icon.styled';
 
@@ -29,6 +30,7 @@ function Icon({ type }) {
 	if (type === 'nav-link-tagged') return <NavLinkTaggedSvg />;
 	if (type === 'multi-image') return <MultiImageSvg />;
 	if (type === 'post-close') return <PostCloseSvg />;
+	if (type === 'post-actions') return <PostActions />;
 
 	return <StyledIcon className={type} />;
 }
