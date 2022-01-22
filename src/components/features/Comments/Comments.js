@@ -8,13 +8,7 @@ function Comments({ comments }) {
 		<StyledCommments>
 			{comments && comments.map(({ commentBy, timestamp, comment, replies }) => (
 				<div key={`${commentBy}@${timestamp}`} className='comment-container'>
-					<Comment author={commentBy} timestamp={timestamp} text={comment} />
-					{/* TODO: revisit if the replies should be inside the component or outside */}
-					{replies?.length && (
-						<div className='reply-container'>
-							<Comments comments={replies} />
-						</div>
-					)}
+					<Comment author={commentBy} timestamp={timestamp} text={comment} replies={replies} />
 				</div>
 			))}
 		</StyledCommments>

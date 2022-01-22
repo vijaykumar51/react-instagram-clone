@@ -20,7 +20,7 @@ function Post() {
 
 	return (
 		<StyledPost>
-			<button className='post-close-icon' type='button' tabIndex={-1} onClick={() => navigate(-1)}>
+			<button className='post-close-icon' type='button' onClick={() => navigate(-1)}>
 				<Icon type='post-close' />
 			</button>
 			{/* TODO: make this main-container as a HOC */}

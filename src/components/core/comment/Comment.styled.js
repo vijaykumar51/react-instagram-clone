@@ -21,4 +21,28 @@ export const StyledComment = styled.div`
 		font-weight: 400;
 		margin-top: 16px;
 	}
+
+	.show-hide-reply-link {
+		background: none;
+		border: none;
+		color: rgba(142, 142, 142, 1);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		font-size: 12px;
+		font-weight: 600;
+		margin: 16px 0px;
+		padding: 0; 
+	}
+
+	.show-hide-reply-link:before {
+		border-bottom: 1px solid rgb(142, 142, 142);
+		content: '';
+		display: inline-block;
+		margin-right: 20px;
+		vertical-align: middle;
+		width: 24px;
+		
+
+	}
 `;
