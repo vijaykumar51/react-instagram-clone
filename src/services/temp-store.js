@@ -104,6 +104,93 @@ const uploadedPosts = [
 	},
 ];
 
+const comments = [
+	{
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642862010164,
+		comment: 'A sample comment by the original poster',
+		replies: [
+			{
+				commentBy: 'vijay.malik.3112',
+				timestamp: 1642862000164,
+				comment: 'reply 1',
+			},
+			{
+				commentBy: 'vijay.malik.3112',
+				timestamp: 1642862000163,
+				comment: 'reply 2',
+			}
+		]
+	}, {
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642861010164,
+		comment: 'Live a life worth telling a story about.',
+		replies: [
+			{
+				commentBy: 'ram',
+				timestamp: 1642861000164,
+				comment: 'reply 1',
+			},
+			{
+				commentBy: 'vijay.malik.3112',
+				timestamp: 1642861000124,
+				comment: 'reply 2',
+			}
+		]
+	},
+	{
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642861910164,
+		comment: 'Live a life worth telling a story about.',
+		replies: [
+			{
+				commentBy: 'ram',
+				timestamp: 1642861930164,
+				comment: 'reply 1',
+			},
+			{
+				commentBy: 'vijay.malik.3112',
+				timestamp: 1642861910364,
+				comment: 'reply 2',
+			}
+		]
+	},
+	{
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642761910164,
+		comment: 'Live a life worth telling a story about.',
+		replies: [
+			{
+				commentBy: 'ram',
+				timestamp: 1642761900164,
+				comment: 'reply 1',
+			},
+			{
+				commentBy: 'vijay.malik.3112',
+				timestamp: 1642761710164,
+				comment: 'reply 2',
+			}
+		]
+	},
+	{
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642881010164,
+		comment: 'Empty comment 1'
+	},
+	{
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642881090164,
+		comment: 'Empty comment 2'
+	},
+	{
+		commentBy: 'vijay.malik.3112',
+		timestamp: 1642881000164,
+		comment: 'Empty comment 3'
+	}
+];
+
 export const getAllUploadedPosts = () => uploadedPosts;
 
 export const getPostDetails = (postId) => uploadedPosts.filter((post) => post.id === postId);
+
+export const getComments = () => comments;

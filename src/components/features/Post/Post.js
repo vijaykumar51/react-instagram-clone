@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { StyledPost } from './Post.styled';
-import { getPostDetails } from '../../../services/temp-store';
+import { getComments, getPostDetails } from '../../../services/temp-store';
 import { Carousel, Icon, PostHeader } from '../../core';
+import Comments from '../Comments/Comments';
 
 function Post() {
 	const navigate = useNavigate();
@@ -15,6 +16,7 @@ function Post() {
 	const params = useParams();
 	const { postId } = params;
 	const [post] = getPostDetails(postId);
+	const comments = getComments();
 
 	return (
 		<StyledPost>
@@ -27,10 +29,11 @@ function Post() {
 					<Carousel imageData={post.images} />
 				</div>
 				<div className='section right-section'>
-					<PostHeader />
-					{post.uploadTime}
-					<br />
-					{JSON.stringify(post.images)}
+					<div className='header-container'><PostHeader /></div>
+					<div className='comment-section-container'><Comments comments={comments} /></div>
+					<div className='interaction-options'>Like comment</div>
+					<div className='stats-container'>Stats</div>
+					<div className='new-comment'>comment here</div>
 				</div>
 			</div>
 		</StyledPost>

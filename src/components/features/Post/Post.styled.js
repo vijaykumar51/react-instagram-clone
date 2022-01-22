@@ -41,6 +41,15 @@ export const StyledPost = styled.article`
 
 	.right-section {
 		background-color: #fff;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 		flex-basis: 40%;
+		min-width: 335px;
+	}
+
+	.comment-section-container {
+		flex: 1 1 300px;
+		overflow: auto;
 	}
 `;
