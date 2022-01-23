@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const StyledPost = styled.article`
 	background: rgba(0, 0, 0, 0.65);
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	box-sizing: border-box;
-	padding: 30px 100px;
 	position: relative;
 
 	.post-close-icon {
@@ -18,6 +18,28 @@ export const StyledPost = styled.article`
 		top: 20px;
 	}
 
+	.post-nav-container {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.post-nav-link {
+		border-radius: 50%;
+		border: none;
+		background: #fff;
+		cursor: pointer;
+		height: fit-content;
+		padding: 10px;
+	}
+
+	.next-post-link svg {
+		transform: rotate(90deg);
+	}
+	.previous-post-link svg {
+		transform: rotate(-90deg);
+	}
+
 	// TODO: Make this main-container as  a HOC
 
 	.main-container {
@@ -27,6 +49,7 @@ export const StyledPost = styled.article`
 		max-height: 80vh;
 		min-height: 450px;
 		box-sizing: border-box;
+		max-width: 80%;
 	}
 
 	.section {
@@ -43,7 +66,7 @@ export const StyledPost = styled.article`
 		background-color: #fff;
 		display: flex;
 		flex-direction: column;
-		flex-basis: 40%;
+		flex-basis: 35%;
 		min-width: 335px;
 	}
 

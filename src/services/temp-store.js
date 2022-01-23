@@ -191,6 +191,16 @@ const comments = [
 
 export const getAllUploadedPosts = () => uploadedPosts;
 
-export const getPostDetails = (postId) => uploadedPosts.filter((post) => post.id === postId);
+export const getPostDetails = (postId) => {
+	uploadedPosts.filter((post) => post.id === postId);
+	const currnetPostIndex = uploadedPosts?.findIndex((post) => post.id === postId);
+	const nextPostId = uploadedPosts?.[currnetPostIndex + 1]?.id || null;
+	const prevPostId = uploadedPosts?.[currnetPostIndex - 1]?.id || null;
+	return {
+		prevPostId,
+		postData: uploadedPosts?.[currnetPostIndex],
+		nextPostId
+	};
+};
 
 export const getComments = () => comments;
