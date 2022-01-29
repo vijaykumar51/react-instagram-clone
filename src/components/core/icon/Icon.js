@@ -19,6 +19,7 @@ import { ReactComponent as Comment } from './svg/comment.svg';
 import { ReactComponent as Share } from './svg/share.svg';
 import { ReactComponent as Bookmark } from './svg/bookmark.svg';
 import { ReactComponent as AngularBracket } from './svg/angular-bracket.svg';
+import { ReactComponent as Media } from './svg/media.svg';
 
 import { StyledIcon } from './Icon.styled';
 
@@ -41,6 +42,7 @@ function Icon({ type }) {
 	if (type === 'share') return <Share />;
 	if (type === 'bookmark') return <Bookmark />;
 	if (type === 'angular-bracket') return <AngularBracket />;
+	if (type === 'media') return <Media />;
 
 	return <StyledIcon className={type} />;
 }
