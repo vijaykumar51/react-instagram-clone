@@ -8,11 +8,6 @@ import Overlay from '../HOC/Overlay/Overlay';
 import Comments from '../Comments/Comments';
 
 function Post({ setPreviousItemUrl, setNextItemUrl }) {
-	// TODO: check the portal usecase here
-	// const location = useLocation();
-	// console.log('state', location.state);
-	// const { modal } = location.state ?? {};
-
 	const [currentPostData, setCurrentPostData] = useState({});
 	const [comments, setComments] = useState([]);
 

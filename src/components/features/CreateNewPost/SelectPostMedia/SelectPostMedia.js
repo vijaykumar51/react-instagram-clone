@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { StyledSelectPostMedia } from './SelectPostMedia.styled';
 import Overlay from '../../HOC/Overlay/Overlay';
 import { Icon } from '../../../core';
 
 function SelectPostMedia() {
-	const [, setUploadedFile] = useState();
-	const [preview, setPreview] = useState();
+	const navigate = useNavigate();
 
 	const handleFileUpload = (event) => {
 		if (event?.target?.files?.[0]) {
-			setUploadedFile(event.target.files[0]);
-
-			const reader = new FileReader();
-			reader.onload = function (e) {
-				console.log('event onload', e);
-				setPreview(e.target.result);
-			};
-			reader.readAsDataURL(event.target.files[0]);
+			navigate('/create/details', {
+				state: { uploadedFile: event.target.files[0] }
+			});
 		}
-		// console.log(event.target.files[0]);
-		// setUploadedFile(event.target.files[0]);
 	};
 
 	return (
@@ -42,10 +35,11 @@ function SelectPostMedia() {
 					<label htmlFor='uploadedFiles' className='upload-label'>Select from computer
 					</label>
 				</div>
-				{preview && <img height='200px' width='300px' src={preview} alt='upload preview' />}
 			</div>
 		</StyledSelectPostMedia>
 	);
 }
+
+SelectPostMedia.whyDidYouRender = true;
 
 export default Overlay(SelectPostMedia);
