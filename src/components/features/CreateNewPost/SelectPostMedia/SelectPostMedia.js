@@ -4,7 +4,7 @@ import Overlay from '../../HOC/Overlay/Overlay';
 import { Icon } from '../../../core';
 
 function SelectPostMedia() {
-	const [uploadedFile, setUploadedFile] = useState();
+	const [, setUploadedFile] = useState();
 	const [preview, setPreview] = useState();
 
 	const handleFileUpload = (event) => {
