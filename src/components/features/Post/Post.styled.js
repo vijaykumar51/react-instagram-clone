@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.article`
+	display: flex;
+	justify-content: center;
+
 	.main-container {
 		background: #eee;
 		display: flex;
@@ -8,7 +11,6 @@ export const StyledPost = styled.article`
 		max-height: 80vh;
 		min-height: 450px;
 		box-sizing: border-box;
-		max-width: 80%;
 	}
 
 	.section {

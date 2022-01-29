@@ -1,11 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react/cjs/react.development';
 import { Icon } from '../../../core';
 import { StyledOverlay } from './Overlay.styled';
 
+// TODO: fix the responsiveness, finalize the responsiblities of the overlay
 function Overlay(WrappedComponent) {
-	function HOC() {
+	function HOC(props) {
 		const navigate = useNavigate();
+		const [previousItemUrl, setPreviousItemUrl] = useState();
+		const [nextItemUrl, setNextItemUrl] = useState();
+
+		const nextItemUrlHandler = (url) => setNextItemUrl(url);
+		const prevItemUrlHandler = (url) => setPreviousItemUrl(url);
 
 		return (
 			<StyledOverlay>
@@ -14,23 +21,24 @@ function Overlay(WrappedComponent) {
 				</button>
 				<div className='post-nav-container'>
 					<div>
-						{/* {prevPostId
+						{previousItemUrl
 					&& (
-						<Link to={`/post/${prevPostId}`} className='post-nav-link previous-post-link'>
+						<Link to={previousItemUrl} className='post-nav-link previous-post-link'>
 							<Icon type='angular-bracket' />
 						</Link>
-					)} */}
+					)}
+					</div>
+					<div className='wrapper-component-container'>
+						{ /* eslint-disable-next-line react/jsx-props-no-spreading */}
+						<WrappedComponent {...props} setPreviousItemUrl={prevItemUrlHandler} setNextItemUrl={nextItemUrlHandler} />
 					</div>
 					<div>
-						<WrappedComponent />
-					</div>
-					<div>
-						{/* { nextPostId
+						{ nextItemUrl
 					&& (
-						<Link to={`/post/${nextPostId}`} className='post-nav-link next-post-link'>
+						<Link to={nextItemUrl} className='post-nav-link next-post-link'>
 							<Icon type='angular-bracket' />
 						</Link>
-					)} */}
+					)}
 					</div>
 				</div>
 			</StyledOverlay>

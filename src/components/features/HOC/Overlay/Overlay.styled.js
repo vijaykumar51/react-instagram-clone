@@ -20,6 +20,7 @@ export const StyledOverlay = styled.div`
 
 	.post-nav-container {
 		display: flex;
+		flex: 1;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -29,9 +30,9 @@ export const StyledOverlay = styled.div`
 		border: none;
 		background: #fff;
 		cursor: pointer;
-		display: inline-block;
+		display: flex;
 		margin: 0 30px;
-		padding: 10px;
+		padding: 8px;
 	}
 
 	.next-post-link svg {
@@ -39,5 +40,12 @@ export const StyledOverlay = styled.div`
 	}
 	.previous-post-link svg {
 		transform: rotate(-90deg);
+	}
+
+	.wrapper-component-container {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 `;

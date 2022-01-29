@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Icon from '../icon/Icon';
 import ProfilePicture from '../profile-picture/ProfilePicture';
 import { StyledPostHeader } from './PostHeader.styled';
@@ -18,4 +18,4 @@ function PostHeader() {
 
 PostHeader.whyDidYouRender = true;
 
-export default PostHeader;
+export default memo(PostHeader);

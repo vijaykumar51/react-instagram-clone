@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Comment } from '../../core';
 import { StyledCommments } from './Comments.styled';
@@ -33,4 +33,4 @@ Comments.defaultProps = {
 };
 
 Comments.whyDidYouRender = true;
-export default Comments;
+export default memo(Comments);

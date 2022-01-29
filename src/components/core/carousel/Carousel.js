@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Icon from '../icon/Icon';
 import { StyledCarousel } from './Carousel.styled';
 
+// TODO: optimize carousel, prevent re-downloading of the images, add smooth transitions
 function Carousel({ imageData }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
-	const imageCount = imageData.length;
+	const imageCount = imageData?.length;
 	const showLeftArrow = imageCount > 1 && currentImageIndex > 0;
 	const showRightArrow = imageCount > 1 && currentImageIndex < imageCount - 1;
 
@@ -26,7 +27,7 @@ function Carousel({ imageData }) {
 					<Icon type='left-arrow-small' />
 				</button>
 			)}
-			{imageData.map(({ url }, index) => (
+			{imageData?.map(({ url }, index) => (
 				<div
 					key={Math.random().toString(36).substr(2, 9)}
 					className={index === currentImageIndex ? 'current-image image-container' : 'image-container'}
@@ -40,8 +41,8 @@ function Carousel({ imageData }) {
 				</button>
 			)}
 			<div className='post-count-dots'>
-				{imageData.length > 1
-					&& imageData.map((image, index) => (
+				{imageData?.length > 1
+					&& imageData?.map((image, index) => (
 						<span
 							key={Math.random().toString(36).substr(2, 9)}
 							className={index === currentImageIndex ? 'post-dot current' : 'post-dot'}
@@ -53,8 +54,12 @@ function Carousel({ imageData }) {
 }
 
 Carousel.propTypes = {
-	imageData: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+	imageData: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+};
+
+Carousel.defaultProps = {
+	imageData: []
 };
 
 Carousel.whyDidYouRender = true;
-export default Carousel;
+export default memo(Carousel);

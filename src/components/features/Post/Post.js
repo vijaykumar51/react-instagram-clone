@@ -1,23 +1,31 @@
-import React from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { StyledPost } from './Post.styled';
 import { getComments, getPostDetails } from '../../../services/temp-store';
 import { Carousel, Icon, PostHeader } from '../../core';
 import Overlay from '../HOC/Overlay/Overlay';
 import Comments from '../Comments/Comments';
 
-function Post() {
+function Post({ setPreviousItemUrl, setNextItemUrl }) {
 	// TODO: check the portal usecase here
 	// const location = useLocation();
 	// console.log('state', location.state);
 	// const { modal } = location.state ?? {};
 
-	// const params = useParams();
-	// const { postId } = params;
+	const [currentPostData, setCurrentPostData] = useState({});
+	const [comments, setComments] = useState([]);
 
-	const postId = 'post1';
-	const { postData: currentPostData } = getPostDetails(postId);
-	const comments = getComments();
+	const params = useParams();
+	const { postId } = params;
+
+	useEffect(() => {
+		const { prevPostId, postData, nextPostId } = getPostDetails(postId);
+		setCurrentPostData(postData);
+		setPreviousItemUrl(`/post/${prevPostId}`);
+		setNextItemUrl(`/post/${nextPostId}`);
+		setComments(getComments());
+	}, [postId]);
 
 	return (
 		<StyledPost>
@@ -41,5 +49,17 @@ function Post() {
 		</StyledPost>
 	);
 }
+
+Post.propTypes = {
+	setPreviousItemUrl: PropTypes.func,
+	setNextItemUrl: PropTypes.func
+};
+
+Post.defaultProps = {
+	setPreviousItemUrl: null,
+	setNextItemUrl: null
+};
+
+Post.whyDidYourRender = true;
 
 export default Overlay(Post);
