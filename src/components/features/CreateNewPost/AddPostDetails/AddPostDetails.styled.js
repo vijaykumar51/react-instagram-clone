@@ -15,11 +15,24 @@ export const StyledAddPostDetails = styled.div`
 		border-bottom: 1px solid rgb(219, 219, 219);
 		color: rgb(38, 38, 38);
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		font-size: 16px;
 		font-weight: 600;
 		height: 42px;
+	}
+
+	.header button {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 600;
+		padding: 0 16px;
+	}
+
+	.header .share-post {
+		color: rgb(0, 149, 246);
 	}
 
 	.add-details-container {
@@ -34,6 +47,16 @@ export const StyledAddPostDetails = styled.div`
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	.additional-details-container {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	.caption-container {
+		height: 210px;
 	}
 
 `;

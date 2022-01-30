@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { PostHeader } from '../../../core';
+import { PostHeader, TextInput } from '../../../core';
 import Overlay from '../../HOC/Overlay/Overlay';
 import { StyledAddPostDetails } from './AddPostDetails.styled';
 
@@ -23,15 +23,19 @@ function AddPostDetails() {
 	return (
 		<StyledAddPostDetails>
 			<div className='header'>
-			Create New Post
+				<button type='button' onClick={() => navigate(-1)}>Back</button>
+				<span>Create New Post</span>
+				<button type='button' className='share-post'>Share</button>
 			</div>
 			<div className='add-details-container'>
 				<div className='image-preview-container'>
 					{previewImage && <img src={previewImage} alt='upload preview' className='uploaded-image-preview' />}
 				</div>
-				<div>
+				<div className='additional-details-container'>
 					<PostHeader />
-					write a caption
+					<div className='caption-container'>
+						<TextInput />
+					</div>
 				</div>
 			</div>
 		</StyledAddPostDetails>
