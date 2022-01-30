@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { StyledPost } from './Post.styled';
+import React, { memo, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getComments, getPostDetails } from '../../../services/temp-store';
 import { Carousel, Icon, PostHeader } from '../../core';
-import Overlay from '../HOC/Overlay/Overlay';
 import Comments from '../Comments/Comments';
+import Overlay from '../HOC/Overlay/Overlay';
+import { StyledPost } from './Post.styled';
 
+// TODO: pass every data posts needs in props, don't use useParams
 function Post({ setPreviousItemUrl, setNextItemUrl }) {
 	const [currentPostData, setCurrentPostData] = useState({});
 	const [comments, setComments] = useState([]);
-
 	const params = useParams();
-	const { postId } = params;
 
 	useEffect(() => {
+		const { postId } = params;
 		const { prevPostId, postData, nextPostId } = getPostDetails(postId);
 		setCurrentPostData(postData);
 		setPreviousItemUrl(`/post/${prevPostId}`);
 		setNextItemUrl(`/post/${nextPostId}`);
 		setComments(getComments());
-	}, [postId]);
+	}, []);
 
 	return (
 		<StyledPost>
@@ -57,4 +57,4 @@ Post.defaultProps = {
 
 Post.whyDidYourRender = true;
 
-export default Overlay(Post);
+export default Overlay(memo(Post));

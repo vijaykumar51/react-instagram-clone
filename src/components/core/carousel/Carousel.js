@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { useState, memo } from 'react';
+import React, { memo, useState } from 'react';
 import Icon from '../icon/Icon';
 import { StyledCarousel } from './Carousel.styled';
 
-// TODO: optimize carousel, prevent re-downloading of the images, add smooth transitions
+// TODO: optimize carousel, add smooth transitions
 function Carousel({ imageData }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const imageCount = imageData?.length;
@@ -27,9 +27,14 @@ function Carousel({ imageData }) {
 					<Icon type='left-arrow-small' />
 				</button>
 			)}
+			{/*
+				* TIP:
+				* Using Math.random() as key will re-render the images as the key will be different each time,
+				* This will result in image download request for all the images
+				*/}
 			{imageData?.map(({ url }, index) => (
 				<div
-					key={Math.random().toString(36).substr(2, 9)}
+					key={url}
 					className={index === currentImageIndex ? 'current-image image-container' : 'image-container'}
 				>
 					<img className='post-image' src={url} alt='uploaded-post' />
@@ -42,9 +47,9 @@ function Carousel({ imageData }) {
 			)}
 			<div className='post-count-dots'>
 				{imageData?.length > 1
-					&& imageData?.map((image, index) => (
+					&& imageData?.map(({ url }, index) => (
 						<span
-							key={Math.random().toString(36).substr(2, 9)}
+							key={url}
 							className={index === currentImageIndex ? 'post-dot current' : 'post-dot'}
 						/>
 					))}

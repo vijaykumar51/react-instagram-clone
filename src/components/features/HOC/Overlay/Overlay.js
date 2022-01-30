@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import { Icon } from '../../../core';
@@ -11,8 +11,8 @@ function Overlay(WrappedComponent) {
 		const [previousItemUrl, setPreviousItemUrl] = useState();
 		const [nextItemUrl, setNextItemUrl] = useState();
 
-		const nextItemUrlHandler = (url) => setNextItemUrl(url);
-		const prevItemUrlHandler = (url) => setPreviousItemUrl(url);
+		const nextItemUrlHandler = useCallback((url) => setNextItemUrl(url), [WrappedComponent]);
+		const prevItemUrlHandler = useCallback((url) => setPreviousItemUrl(url), [WrappedComponent]);
 
 		return (
 			<StyledOverlay>
@@ -46,5 +46,7 @@ function Overlay(WrappedComponent) {
 	}
 	return HOC;
 }
+
+Overlay.whyDidYouRender = true;
 
 export default Overlay;
