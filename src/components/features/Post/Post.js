@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getComments, getPostDetails } from '../../../services/temp-store';
 import { Carousel, Icon, PostHeader } from '../../core';
@@ -12,15 +12,14 @@ function Post({ setPreviousItemUrl, setNextItemUrl }) {
 	const [currentPostData, setCurrentPostData] = useState({});
 	const [comments, setComments] = useState([]);
 	const params = useParams();
-
+	const { postId } = params;
 	useEffect(() => {
-		const { postId } = params;
 		const { prevPostId, postData, nextPostId } = getPostDetails(postId);
 		setCurrentPostData(postData);
-		setPreviousItemUrl(`/post/${prevPostId}`);
-		setNextItemUrl(`/post/${nextPostId}`);
+		setPreviousItemUrl(prevPostId ? `/post/${prevPostId}` : null);
+		setNextItemUrl(nextPostId ? `/post/${nextPostId}` : null);
 		setComments(getComments());
-	}, []);
+	}, [postId]);
 
 	return (
 		<StyledPost>
@@ -57,4 +56,4 @@ Post.defaultProps = {
 
 Post.whyDidYourRender = true;
 
-export default Overlay(memo(Post));
+export default Overlay(Post);
