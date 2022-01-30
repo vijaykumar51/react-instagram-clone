@@ -16,14 +16,16 @@ function Overlay(WrappedComponent) {
 
 		return (
 			<StyledOverlay>
-				<button className='post-close-icon' type='button' onClick={() => navigate(-1)}>
-					<Icon type='post-close' />
-				</button>
-				<div className='post-nav-container'>
-					<div>
+				<div className='overlay-header'>
+					<button className='close-icon' type='button' onClick={() => navigate(-1)}>
+						<Icon type='close' />
+					</button>
+				</div>
+				<div className='overlay-content-container'>
+					<div className='nav-link-container'>
 						{previousItemUrl
 					&& (
-						<Link to={previousItemUrl} className='post-nav-link previous-post-link'>
+						<Link to={previousItemUrl} className='nav-link previous-item-link'>
 							<Icon type='angular-bracket' />
 						</Link>
 					)}
@@ -32,10 +34,10 @@ function Overlay(WrappedComponent) {
 						{ /* eslint-disable-next-line react/jsx-props-no-spreading */}
 						<WrappedComponent {...props} setPreviousItemUrl={prevItemUrlHandler} setNextItemUrl={nextItemUrlHandler} />
 					</div>
-					<div>
+					<div className='nav-link-container'>
 						{ nextItemUrl
 					&& (
-						<Link to={nextItemUrl} className='post-nav-link next-post-link'>
+						<Link to={nextItemUrl} className='nav-link next-item-link'>
 							<Icon type='angular-bracket' />
 						</Link>
 					)}

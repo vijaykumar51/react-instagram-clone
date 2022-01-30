@@ -3,42 +3,53 @@ import styled from 'styled-components';
 export const StyledOverlay = styled.div`
 	background: rgba(0, 0, 0, 0.65);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	box-sizing: border-box;
 	position: relative;
 
-	.post-close-icon {
+	.overlay-header {
+		display: flex;
+		justify-content: right;
+		width: 100%;
+	}
+
+	.close-icon {
 		background: none;
 		border: none;
 		cursor: pointer;
-		position: absolute;
-		right: 20px;
-		top: 20px;
+		margin: 20px;
 	}
 
-	.post-nav-container {
+	.overlay-content-container {
 		display: flex;
 		flex: 1;
 		justify-content: space-between;
 		align-items: center;
+		width: 100%;
 	}
 
-	.post-nav-link {
+	.nav-link-container {
+		width: 80px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.nav-link {
 		border-radius: 50%;
 		border: none;
 		background: #fff;
 		cursor: pointer;
-		display: flex;
-		margin: 0 30px;
+		display: inline-flex;
 		padding: 8px;
 	}
 
-	.next-post-link svg {
+	.next-item-link svg {
 		transform: rotate(90deg);
 	}
-	.previous-post-link svg {
+	.previous-item-link svg {
 		transform: rotate(-90deg);
 	}
 
@@ -47,5 +58,6 @@ export const StyledOverlay = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		width: 100%;
 	}
 `;

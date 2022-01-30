@@ -27,7 +27,7 @@ export const StyledPost = styled.article`
 		background-color: #fff;
 		display: flex;
 		flex-direction: column;
-		flex-basis: 35%;
+		flex-basis: 40%;
 		min-width: 335px;
 	}
 
