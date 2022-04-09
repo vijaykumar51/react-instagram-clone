@@ -44,6 +44,7 @@ export const StyledAddPostDetails = styled.div`
 	}
 
 	.image-preview-container .uploaded-image-preview {
+	  border-bottom-left-radius: 10px;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
