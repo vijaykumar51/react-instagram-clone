@@ -23,34 +23,48 @@ function Carousel({ imageData }) {
 	return (
 		<StyledCarousel>
 			{showLeftArrow && (
-				<button type='button' className='arrow-icon-container left-arrow' onClick={getPreviousImage}>
+				<button
+					type='button'
+					className='arrow-icon-container left-arrow'
+					onClick={getPreviousImage}
+				>
 					<Icon type='left-arrow-small' />
 				</button>
 			)}
 			{/*
-				* TIP:
-				* Using Math.random() as key will re-render the images as the key will be different each time,
-				* This will result in image download request for all the images
-				*/}
-			{imageData?.map(({ url }, index) => (
+			 * TIP:
+			 * Using Math.random() as key will re-render the images as the key will be different each time,
+			 * This will result in image download request for all the images
+			 */}
+			{imageData?.map((url, index) => (
 				<div
-					key={url}
-					className={index === currentImageIndex ? 'current-image image-container' : 'image-container'}
+					key={url.substr(-10)}
+					className={
+						index === currentImageIndex
+							? 'current-image image-container'
+							: 'image-container'
+					}
 				>
 					<img className='post-image' src={url} alt='uploaded-post' />
 				</div>
 			))}
 			{showRightArrow && (
-				<button type='button' className='arrow-icon-container right-arrow' onClick={getNextImage}>
+				<button
+					type='button'
+					className='arrow-icon-container right-arrow'
+					onClick={getNextImage}
+				>
 					<Icon type='right-arrow-small' />
 				</button>
 			)}
 			<div className='post-count-dots'>
-				{imageData?.length > 1
-					&& imageData?.map(({ url }, index) => (
+				{imageData?.length > 1 &&
+					imageData?.map((url, index) => (
 						<span
-							key={url}
-							className={index === currentImageIndex ? 'post-dot current' : 'post-dot'}
+							key={url.substr(-10)}
+							className={
+								index === currentImageIndex ? 'post-dot current' : 'post-dot'
+							}
 						/>
 					))}
 			</div>
@@ -59,11 +73,11 @@ function Carousel({ imageData }) {
 }
 
 Carousel.propTypes = {
-	imageData: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+	imageData: PropTypes.arrayOf(PropTypes.string),
 };
 
 Carousel.defaultProps = {
-	imageData: []
+	imageData: [],
 };
 
 Carousel.whyDidYouRender = true;

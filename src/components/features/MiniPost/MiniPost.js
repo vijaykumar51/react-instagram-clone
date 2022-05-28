@@ -1,7 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
 import { Icon } from '../../core';
 import { StyledMiniPost } from './MiniPost.styled';
 
@@ -11,7 +10,13 @@ function MiniPost({ id, likeCount, commentCount, sources }) {
 	return (
 		<NavLink to={`/post/${id}`} state={{ modal: true }}>
 			<StyledMiniPost>
-				<img className='mini-post-image' src={thumbnailImage.url} alt='uploaded-post' />
+				{thumbnailImage && (
+					<img
+						className='mini-post-image'
+						src={thumbnailImage}
+						alt='uploaded-post'
+					/>
+				)}
 				{hasMultipleImages && (
 					<div className='multi-image-highlighter'>
 						<Icon type='multi-image' />
@@ -34,9 +39,15 @@ function MiniPost({ id, likeCount, commentCount, sources }) {
 
 MiniPost.propTypes = {
 	id: PropTypes.string.isRequired,
-	likeCount: PropTypes.number.isRequired,
-	commentCount: PropTypes.number.isRequired,
-	sources: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string.isRequired)).isRequired,
+	likeCount: PropTypes.number,
+	commentCount: PropTypes.number,
+	sources: PropTypes.arrayOf(PropTypes.string.isRequired),
+};
+
+MiniPost.defaultProps = {
+	likeCount: 0,
+	commentCount: 0,
+	sources: [],
 };
 
 MiniPost.whyDidYouRender = true;

@@ -119,9 +119,10 @@ const comments = [
 				commentBy: 'vijay.malik.3112',
 				timestamp: 1642862000163,
 				comment: 'reply 2',
-			}
-		]
-	}, {
+			},
+		],
+	},
+	{
 		commentBy: 'vijay.malik.3112',
 		timestamp: 1642861010164,
 		comment: 'Live a life worth telling a story about.',
@@ -135,8 +136,8 @@ const comments = [
 				commentBy: 'vijay.malik.3112',
 				timestamp: 1642861000124,
 				comment: 'reply 2',
-			}
-		]
+			},
+		],
 	},
 	{
 		commentBy: 'vijay.malik.3112',
@@ -152,8 +153,8 @@ const comments = [
 				commentBy: 'vijay.malik.3112',
 				timestamp: 1642861910364,
 				comment: 'reply 2',
-			}
-		]
+			},
+		],
 	},
 	{
 		commentBy: 'vijay.malik.3112',
@@ -169,37 +170,37 @@ const comments = [
 				commentBy: 'vijay.malik.3112',
 				timestamp: 1642761710164,
 				comment: 'reply 2',
-			}
-		]
+			},
+		],
 	},
 	{
 		commentBy: 'vijay.malik.3112',
 		timestamp: 1642881010164,
-		comment: 'Empty comment 1'
+		comment: 'Empty comment 1',
 	},
 	{
 		commentBy: 'vijay.malik.3112',
 		timestamp: 1642881090164,
-		comment: 'Empty comment 2'
+		comment: 'Empty comment 2',
 	},
 	{
 		commentBy: 'vijay.malik.3112',
 		timestamp: 1642881000164,
-		comment: 'Empty comment 3'
-	}
+		comment: 'Empty comment 3',
+	},
 ];
 
 export const getAllUploadedPosts = () => uploadedPosts;
 
-export const getPostDetails = (postId) => {
-	uploadedPosts.filter((post) => post.id === postId);
-	const currnetPostIndex = uploadedPosts?.findIndex((post) => post.id === postId);
-	const nextPostId = uploadedPosts?.[currnetPostIndex + 1]?.id || null;
-	const prevPostId = uploadedPosts?.[currnetPostIndex - 1]?.id || null;
+export const getPostDetails = (allPosts, postId) => {
+	allPosts.filter((post) => post.id === postId);
+	const currnetPostIndex = allPosts?.findIndex((post) => post.id === postId);
+	const nextPostId = allPosts?.[currnetPostIndex + 1]?.id || null;
+	const prevPostId = allPosts?.[currnetPostIndex - 1]?.id || null;
 	return {
 		prevPostId,
-		postData: uploadedPosts?.[currnetPostIndex],
-		nextPostId
+		postData: allPosts?.[currnetPostIndex],
+		nextPostId,
 	};
 };
 
