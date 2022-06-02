@@ -6,10 +6,13 @@ export const StyledAddPostDetails = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	min-width: 350px;
+	height: 80%;
 	min-height: 350px;
+	max-height: 80%;
+	min-width: 350px;
 	max-width: 80%;
 	margin: 50px;
+	overflow: auto;
 
 	.header {
 		border-bottom: 1px solid rgb(219, 219, 219);
@@ -37,17 +40,12 @@ export const StyledAddPostDetails = styled.div`
 
 	.add-details-container {
 		display: flex;
+		height: calc(100% - 42px);
 	}
 
 	.image-preview-container {
 		flex-basis: 70%;
-	}
-
-	.image-preview-container .uploaded-image-preview {
-	  border-bottom-left-radius: 10px;
-		width: 100%;
 		height: 100%;
-		object-fit: cover;
 	}
 
 	.additional-details-container {
@@ -59,5 +57,4 @@ export const StyledAddPostDetails = styled.div`
 	.caption-container {
 		height: 210px;
 	}
-
 `;

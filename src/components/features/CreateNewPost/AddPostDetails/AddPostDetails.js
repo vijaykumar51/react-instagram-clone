@@ -6,7 +6,7 @@ import {
 	setCaption,
 } from '../../../../store/slices/newPostSlice';
 import { addPost } from '../../../../store/slices/uploadedPosts';
-import { PostHeader, TextInput } from '../../../core';
+import { Carousel, PostHeader, TextInput } from '../../../core';
 import Overlay from '../../HOC/Overlay/Overlay';
 import { StyledAddPostDetails } from './AddPostDetails.styled';
 
@@ -43,14 +43,7 @@ function AddPostDetails() {
 			</div>
 			<div className='add-details-container'>
 				<div className='image-preview-container'>
-					{uploadedImages.map((imageUrl) => (
-						<img
-							key={imageUrl}
-							src={imageUrl}
-							alt='upload preview'
-							className='uploaded-image-preview'
-						/>
-					))}
+					<Carousel imageData={uploadedImages} />
 				</div>
 				<div className='additional-details-container'>
 					<PostHeader />

@@ -7,6 +7,7 @@ export const StyledOverlay = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	max-height: 100vh;
 	box-sizing: border-box;
 	position: relative;
 
@@ -28,6 +29,8 @@ export const StyledOverlay = styled.div`
 		flex: 1;
 		justify-content: space-between;
 		align-items: center;
+		min-height: 0;
+		overflow: auto;
 		width: 100%;
 	}
 
@@ -59,5 +62,7 @@ export const StyledOverlay = styled.div`
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		height: 100%;
+		max-height: 100%;
 	}
 `;
