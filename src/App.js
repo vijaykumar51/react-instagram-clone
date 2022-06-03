@@ -8,6 +8,7 @@ import {
 	SelectNewPostMedia,
 } from './components/features';
 import {
+	HomePage,
 	LoginPage,
 	ProfilePage,
 	SavedPostsPage,
@@ -23,6 +24,7 @@ function App() {
 				<BrowserRouter>
 					<Routes>
 						<Route path='/' element={<LoginPage />} />
+						<Route path='/home' element={<HomePage />} />
 						<Route path='/profile' element={<ProfilePage />}>
 							<Route path='' element={<UploadedPostsPage />} />
 							<Route path='saved' element={<SavedPostsPage />} />

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { Button, Icon, Input } from '../../core';
 import { StyledLoginForm } from './LoginForm.styled';
 
@@ -15,7 +14,7 @@ function LoginForm() {
 	}, [email, password]);
 
 	const login = () => {
-		naviagte('/profile');
+		naviagte('/home');
 	};
 
 	return (
@@ -24,8 +23,18 @@ function LoginForm() {
 				<Icon type='logo-large' className='logo-container' />
 			</div>
 			<div className='form-fields-container'>
-				<Input type='text' label='Email address' value={email} onChange={setEmail} />
-				<Input type='password' label='Password' value={password} onChange={setPassword} />
+				<Input
+					type='text'
+					label='Email address'
+					value={email}
+					onChange={setEmail}
+				/>
+				<Input
+					type='password'
+					label='Password'
+					value={password}
+					onChange={setPassword}
+				/>
 				<Button size='full-bleed' disabled={!isFormValid} onClick={login}>
 					Log In
 				</Button>
