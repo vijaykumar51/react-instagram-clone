@@ -4,7 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { StyledApp } from './App.styled';
 import {
 	AddNewPostDetails,
-	Post,
+	PostWithNavigation,
 	SelectNewPostMedia,
 } from './components/features';
 import {
@@ -35,11 +35,7 @@ function App() {
 							<Route path='details' element={<AddNewPostDetails />} />
 							<Route path='' exact element={<Navigate replace to='select' />} />
 						</Route>
-						{/**
-						 * TODO: alternate approach, instead of using Post directly as route component,
-						 * create a separate PostPage that includes post navigation buttons which are right now part of Overlay HOC right now
-						 */}
-						<Route path='post/:postId' element={<Post />} />
+						<Route path='post/:postId' element={<PostWithNavigation />} />
 						<Route path='*' element={<Navigate replace to='/' />} />
 					</Routes>
 				</BrowserRouter>

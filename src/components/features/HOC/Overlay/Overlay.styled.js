@@ -4,8 +4,6 @@ export const StyledOverlay = styled.div`
 	background: rgba(0, 0, 0, 0.65);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	height: 100vh;
 	max-height: 100vh;
 	box-sizing: border-box;
@@ -27,42 +25,10 @@ export const StyledOverlay = styled.div`
 	.overlay-content-container {
 		display: flex;
 		flex: 1;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		min-height: 0;
 		overflow: auto;
 		width: 100%;
-	}
-
-	.nav-link-container {
-		width: 80px;
-		display: flex;
-		justify-content: center;
-	}
-
-	.nav-link {
-		border-radius: 50%;
-		border: none;
-		background: #fff;
-		cursor: pointer;
-		display: inline-flex;
-		padding: 8px;
-	}
-
-	.next-item-link svg {
-		transform: rotate(90deg);
-	}
-	.previous-item-link svg {
-		transform: rotate(-90deg);
-	}
-
-	.wrapper-component-container {
-		flex: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-		max-height: 100%;
 	}
 `;

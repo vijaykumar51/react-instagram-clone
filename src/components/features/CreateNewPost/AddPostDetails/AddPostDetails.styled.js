@@ -40,6 +40,7 @@ export const StyledAddPostDetails = styled.div`
 
 	.add-details-container {
 		display: flex;
+		/** TODO: find a way to remove this hardcoding of 42px */
 		height: calc(100% - 42px);
 	}
 
