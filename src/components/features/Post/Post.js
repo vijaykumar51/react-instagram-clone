@@ -11,38 +11,36 @@ function Post({ postInfo, comments }) {
 
 	return (
 		<StyledPost>
-			<div className='main-container'>
-				<div className='section left-section'>
-					<Carousel imageData={postInfo?.images} />
+			<div className='section left-section'>
+				<Carousel imageData={postInfo?.images} />
+			</div>
+			<div className='section right-section'>
+				<div className='header-container'>
+					<PostHeader />
 				</div>
-				<div className='section right-section'>
-					<div className='header-container'>
-						<PostHeader />
-					</div>
-					<div className='comment-section-container'>
-						<Comments comments={comments} />
-					</div>
-					<div className='post-interaction-options'>
-						<button type='button' aria-label='like-button'>
-							<Icon type='like' />
-						</button>
-						<button type='button' aria-label='comment-button'>
-							<Icon type='comment' />
-						</button>
-						<button type='button' aria-label='share-button'>
-							<Icon type='share' />
-						</button>
-						<button
-							type='button'
-							aria-label='bookmark-button'
-							className='bookmark-button'
-						>
-							<Icon type='bookmark' />
-						</button>
-					</div>
-					<div className='stats-container'>{postInfo?.uploadTime}</div>
-					<div className='new-comment'>Add a comment...</div>
+				<div className='comment-section-container'>
+					<Comments comments={comments} />
 				</div>
+				<div className='post-interaction-options'>
+					<button type='button' aria-label='like-button'>
+						<Icon type='like' />
+					</button>
+					<button type='button' aria-label='comment-button'>
+						<Icon type='comment' />
+					</button>
+					<button type='button' aria-label='share-button'>
+						<Icon type='share' />
+					</button>
+					<button
+						type='button'
+						aria-label='bookmark-button'
+						className='bookmark-button'
+					>
+						<Icon type='bookmark' />
+					</button>
+				</div>
+				<div className='stats-container'>{postInfo?.uploadTime}</div>
+				<div className='new-comment'>Add a comment...</div>
 			</div>
 		</StyledPost>
 	);

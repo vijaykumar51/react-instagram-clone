@@ -3,15 +3,10 @@ import styled from 'styled-components';
 export const StyledPost = styled.article`
 	display: flex;
 	justify-content: center;
-
-	.main-container {
-		background: #eee;
-		display: flex;
-		flex: 1;
-		max-height: 80vh;
-		min-height: 450px;
-		box-sizing: border-box;
-	}
+	flex: 1;
+	max-height: 80vh;
+	min-height: 450px;
+	box-sizing: border-box;
 
 	.section {
 		flex: 1;
@@ -28,7 +23,6 @@ export const StyledPost = styled.article`
 		display: flex;
 		flex-direction: column;
 		flex-basis: 40%;
-		min-width: 335px;
 	}
 
 	.comment-section-container {
@@ -78,5 +72,4 @@ export const StyledPost = styled.article`
 		color: rgb(38, 38, 38);
 		padding: 16px;
 	}
-
 `;

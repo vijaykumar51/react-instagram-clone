@@ -27,7 +27,7 @@ export const StyledCarousel = styled.div`
 	.image-container .post-image {
 		width: 100%;
 		height: 100%;
-		min-width: 350px;
+		min-width: 150px;
 		max-width: 100%;
 		max-height: 100%;
 		object-fit: contain;
