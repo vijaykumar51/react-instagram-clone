@@ -28,14 +28,15 @@ export const StyledPostWithNavigation = styled.div`
 	}
 
 	.post-container-area {
-		flex: 1;
+		border-radius: 10px;
 		display: flex;
+		flex: 1;
 		justify-content: center;
 		align-items: center;
 		height: 100%;
 		max-height: 100%;
-		width: 100%;
 		min-width: 400px;
 		overflow: auto;
+		width: 100%;
 	}
 `;

@@ -11,11 +11,14 @@ function Post({ postInfo, comments }) {
 
 	return (
 		<StyledPost>
+			<div className='top-header-container'>
+				<PostHeader />
+			</div>
 			<div className='section left-section'>
 				<Carousel imageData={postInfo?.images} />
 			</div>
 			<div className='section right-section'>
-				<div className='header-container'>
+				<div className='right-header-container'>
 					<PostHeader />
 				</div>
 				<div className='comment-section-container'>

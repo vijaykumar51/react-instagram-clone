@@ -7,6 +7,7 @@ export const StyledPost = styled.article`
 	max-height: 80vh;
 	min-height: 450px;
 	box-sizing: border-box;
+	background: #eee;
 
 	.section {
 		flex: 1;
@@ -23,6 +24,10 @@ export const StyledPost = styled.article`
 		display: flex;
 		flex-direction: column;
 		flex-basis: 40%;
+	}
+
+	.top-header-container {
+		display: none;
 	}
 
 	.comment-section-container {
@@ -71,5 +76,19 @@ export const StyledPost = styled.article`
 		border-top: 1px solid rgb(239, 239, 239);
 		color: rgb(38, 38, 38);
 		padding: 16px;
+	}
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+
+		.top-header-container {
+			display: block;
+		}
+
+		.right-section .right-header-container,
+		.right-section .comment-section-container,
+		.right-section .new-comment {
+			display: none;
+		}
 	}
 `;
