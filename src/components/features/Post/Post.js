@@ -54,10 +54,12 @@ Post.propTypes = {
 		uploadTime: PropTypes.string,
 		images: PropTypes.arrayOf(PropTypes.string),
 	}),
-	comments: PropTypes.shape({
-		commentBy: PropTypes.string.isRequired,
-		comment: PropTypes.string.isRequired,
-	}),
+	comments: PropTypes.arrayOf(
+		PropTypes.shape({
+			commentBy: PropTypes.string.isRequired,
+			comment: PropTypes.string.isRequired,
+		})
+	),
 };
 
 Post.defaultProps = {

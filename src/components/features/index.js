@@ -6,3 +6,4 @@ export { default as MiniPost } from './MiniPost/MiniPost';
 export { default as Post } from './Post/Post';
 export { default as PostWithNavigation } from './PostWithNavigation/PostWithNavigation';
 export { default as ProfileOverview } from './ProfileOverview/ProfileOverview';
+export { default as TimelinePost } from './TimelinePost/TimelinePost';
