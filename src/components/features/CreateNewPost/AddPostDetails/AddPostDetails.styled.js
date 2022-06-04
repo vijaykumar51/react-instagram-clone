@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledAddPostDetails = styled.div`
+	aspect-ratio: 16/9;
 	background-color: #fff;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	height: 80%;
 	min-height: 350px;
 	max-height: 80%;
 	min-width: 350px;
@@ -20,6 +20,7 @@ export const StyledAddPostDetails = styled.div`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-shrink: 0;
 		font-size: 16px;
 		font-weight: 600;
 		height: 42px;
@@ -52,7 +53,7 @@ export const StyledAddPostDetails = styled.div`
 	.additional-details-container {
 		display: flex;
 		flex-direction: column;
-		flex: 1;
+		flex: 1 1 30%;
 	}
 
 	.caption-container {

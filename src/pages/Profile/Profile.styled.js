@@ -6,7 +6,7 @@ export const StyledProfile = styled.div`
 	.posts-pages-nav {
 		margin: 10px 0;
 		border-top: 1px solid rgb(219, 219, 219);
-		width: 935px;
+		max-width: 935px;
 		margin: auto;
 		margin-top: 10px;
 	}

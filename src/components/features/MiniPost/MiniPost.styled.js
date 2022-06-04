@@ -5,10 +5,9 @@ export const StyledMiniPost = styled.div`
 	cursor: pointer;
 
 	.mini-post-image {
-		width: 100%;
-		height: 290px;
-		min-height: 200px;
+		aspect-ratio: 1/1;
 		object-fit: cover;
+		width: 100%;
 	}
 
 	.multi-image-highlighter {
