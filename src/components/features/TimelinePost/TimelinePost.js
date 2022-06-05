@@ -12,7 +12,7 @@ function TimelinePost({ id: postId }) {
 
 	return (
 		<StyledTimelinePost>
-			<Post postInfo={postData} />
+			<Post postInfo={postData} orientation='vertical' />
 		</StyledTimelinePost>
 	);
 }

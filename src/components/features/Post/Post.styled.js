@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledPost = styled.article`
+	background-color: #fff;
+	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
 	flex: 1;
 	max-height: 80vh;
 	min-height: 450px;
-	box-sizing: border-box;
-	background: #eee;
 
 	.section {
 		flex: 1;
@@ -20,7 +20,6 @@ export const StyledPost = styled.article`
 	}
 
 	.right-section {
-		background-color: #fff;
 		display: flex;
 		flex-direction: column;
 		flex-basis: 40%;
@@ -76,6 +75,22 @@ export const StyledPost = styled.article`
 		border-top: 1px solid rgb(239, 239, 239);
 		color: rgb(38, 38, 38);
 		padding: 16px;
+	}
+
+	// TODO: check how to reuse the css here and how to correctly switch between orientations
+	&.orientation-vertical {
+		flex-direction: column;
+		max-height: unset;
+
+		.top-header-container {
+			display: block;
+		}
+
+		.right-section .right-header-container,
+		.right-section .comment-section-container,
+		.right-section .new-comment {
+			display: none;
+		}
 	}
 
 	@media (max-width: 600px) {

@@ -4,13 +4,14 @@ import { Carousel, Icon, PostHeader } from '../../core';
 import Comments from '../Comments/Comments';
 import { StyledPost } from './Post.styled';
 
-function Post({ postInfo, comments }) {
+// TODO: decide how to use orientation and different skins for the orientations
+function Post({ orientation, postInfo, comments }) {
 	if (!postInfo) {
 		return <StyledPost>Post data not available</StyledPost>;
 	}
 
 	return (
-		<StyledPost>
+		<StyledPost className={`orientation-${orientation}`}>
 			<div className='top-header-container'>
 				<PostHeader />
 			</div>
@@ -50,6 +51,7 @@ function Post({ postInfo, comments }) {
 }
 
 Post.propTypes = {
+	orientation: PropTypes.string,
 	postInfo: PropTypes.shape({
 		uploadTime: PropTypes.string,
 		images: PropTypes.arrayOf(PropTypes.string),
@@ -63,6 +65,7 @@ Post.propTypes = {
 };
 
 Post.defaultProps = {
+	orientation: 'horizontal',
 	postInfo: null,
 	comments: [],
 };

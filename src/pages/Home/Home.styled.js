@@ -4,15 +4,21 @@ export const StyledHome = styled.div`
 	.posts-pages-nav {
 		width: 935px;
 		margin: auto;
-		margin-top: 10px;
 		display: flex;
+		gap: 24px;
 	}
 
 	.timeline-container {
-		flex-basis: 65%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 24px;
+		flex-basis: 70%;
+		margin: 24px 0;
 	}
 
 	.secondary-action-container {
-		flex-basis: 35%;
+		flex-basis: 30%;
+		margin: 24px 0;
 	}
 `;
