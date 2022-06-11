@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { memo, useState } from 'react';
+import { v4 as uuidV4 } from 'uuid';
 import Icon from '../icon/Icon';
 import { StyledCarousel } from './Carousel.styled';
 
@@ -33,12 +34,12 @@ function Carousel({ imageData }) {
 			)}
 			{/*
 			 * TIP:
-			 * Using Math.random() as key will re-render the images as the key will be different each time,
+			 * Using uuid as key will re-render the images as the key will be different each time,
 			 * This will result in image download request for all the images
 			 */}
 			{imageData?.map((url, index) => (
 				<div
-					key={url.substr(-10)}
+					key={uuidV4()}
 					className={
 						index === currentImageIndex
 							? 'current-image image-container'
@@ -61,7 +62,7 @@ function Carousel({ imageData }) {
 				{imageData?.length > 1 &&
 					imageData?.map((url, index) => (
 						<span
-							key={url.substr(-10)}
+							key={uuidV4()}
 							className={
 								index === currentImageIndex ? 'post-dot current' : 'post-dot'
 							}

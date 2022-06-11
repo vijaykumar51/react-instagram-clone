@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledLogin = styled.div`
+export const StyledRegister = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -8,7 +8,7 @@ export const StyledLogin = styled.div`
 	gap: 30px;
 
 	// TODO: this css should not be here - clean it
-	.registration-link-container {
+	.sign-in-link-container {
 		background-color: #fff;
 		border: 1px solid rgb(219, 219, 219);
 		border-radius: 3px;

@@ -11,10 +11,12 @@ import {
 	HomePage,
 	LoginPage,
 	ProfilePage,
+	RegistrationPage,
 	SavedPostsPage,
 	TaggedPostsPage,
 	UploadedPostsPage,
 } from './pages';
+import './services/auth/firebase-setup';
 import { store } from './store/store';
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
 				<BrowserRouter>
 					<Routes>
 						<Route path='/' element={<LoginPage />} />
+						<Route path='/register' element={<RegistrationPage />} />
 						<Route path='/home' element={<HomePage />} />
 						<Route path='/profile' element={<ProfilePage />}>
 							<Route path='' element={<UploadedPostsPage />} />

@@ -1,10 +1,10 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Icon, Input } from '../../core';
-import { StyledLoginForm } from './LoginForm.styled';
+import { StyledRegisterForm } from './RegisterForm.styled';
 
-function LoginForm() {
+function RegisterForm() {
 	const naviagte = useNavigate();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -14,19 +14,21 @@ function LoginForm() {
 		setIsFormValid(!!email && !!password);
 	}, [email, password]);
 
-	const login = () => {
-		signInWithEmailAndPassword(getAuth(), email, password)
+	// TODO: add proper error handline here
+	const onRegister = () => {
+		console.log('registeration called');
+		createUserWithEmailAndPassword(getAuth(), email, password)
 			.then((userCredentials) => {
-				console.log('User logged in ', userCredentials);
-				naviagte('/profile');
+				console.log('User registered ', userCredentials);
+				naviagte('/');
 			})
 			.catch((error) => {
-				console.log('Error while loggin in ', error);
+				console.log('Error while registering ', error);
 			});
 	};
 
 	return (
-		<StyledLoginForm className='login-form'>
+		<StyledRegisterForm className='login-form'>
 			<div className='logo-container'>
 				<Icon type='logo-large' className='logo-container' />
 			</div>
@@ -43,14 +45,14 @@ function LoginForm() {
 					value={password}
 					onChange={setPassword}
 				/>
-				<Button size='full-bleed' disabled={!isFormValid} onClick={login}>
-					Log In
+				<Button size='full-bleed' disabled={!isFormValid} onClick={onRegister}>
+					Register
 				</Button>
 			</div>
-		</StyledLoginForm>
+		</StyledRegisterForm>
 	);
 }
 
-LoginForm.whyDidYouRender = true;
+RegisterForm.whyDidYouRender = true;
 
-export default LoginForm;
+export default RegisterForm;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getComments, getPostDetails } from '../../../services/temp-store';
@@ -55,4 +55,4 @@ function PostWithNavigation() {
 
 PostWithNavigation.whyDidYouRender = true;
 
-export default Overlay(PostWithNavigation);
+export default Overlay(memo(PostWithNavigation));
