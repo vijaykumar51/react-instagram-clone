@@ -18,12 +18,9 @@ function RegisterForm() {
 	const onRegister = () => {
 		console.log('registeration called');
 		createUserWithEmailAndPassword(getAuth(), email, password)
-			.then((userCredentials) => {
-				console.log('User registered ', userCredentials);
-				naviagte('/');
-			})
+			.then(() => naviagte('/'))
 			.catch((error) => {
-				console.log('Error while registering ', error);
+				console.error('Error while registering ', error);
 			});
 	};
 

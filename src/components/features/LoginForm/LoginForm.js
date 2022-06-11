@@ -16,12 +16,9 @@ function LoginForm() {
 
 	const login = () => {
 		signInWithEmailAndPassword(getAuth(), email, password)
-			.then((userCredentials) => {
-				console.log('User logged in ', userCredentials);
-				naviagte('/profile');
-			})
+			.then(() => naviagte('/profile'))
 			.catch((error) => {
-				console.log('Error while loggin in ', error);
+				console.error('error while logging in', error);
 			});
 	};
 

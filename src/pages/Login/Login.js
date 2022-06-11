@@ -4,13 +4,9 @@ import { LoginForm } from '../../components/features';
 import { StyledLogin } from './Login.styled';
 
 function Login() {
-	const onLogin = () => {
-		console.log('login called');
-	};
-
 	return (
 		<StyledLogin>
-			<LoginForm onSubmit={onLogin} />
+			<LoginForm />
 			<div className='registration-link-container'>
 				<span>Don&apos;t have an account?</span>
 				<Link to='/register'>Sign up</Link>

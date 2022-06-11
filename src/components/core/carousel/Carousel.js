@@ -59,8 +59,8 @@ function Carousel({ imageData }) {
 				</button>
 			)}
 			<div className='post-count-dots'>
-				{imageData?.length > 1 &&
-					imageData?.map((url, index) => (
+				{imageData?.length > 1
+					&& imageData?.map((url, index) => (
 						<span
 							key={uuidV4()}
 							className={
