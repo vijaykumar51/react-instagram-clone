@@ -1,11 +1,12 @@
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
-import { collection, doc, getDocs, setDoc } from 'firebase/firestore';
-// TODO: correct this import
+import { doc, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { firebaseDb } from '../../../services/auth/firebase-setup';
 import { Button, Icon, Input } from '../../core';
 import { StyledRegisterForm } from './RegisterForm.styled';
+import { getUserProfileFromAPI } from '../../../store/slices/userProfileSlice';
 
 function RegisterForm() {
 	const naviagte = useNavigate();
@@ -13,6 +14,7 @@ function RegisterForm() {
 	const [password, setPassword] = useState('');
 	const [name, setName] = useState('');
 	const [isFormValid, setIsFormValid] = useState(false);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setIsFormValid(!!email && !!password);
@@ -21,18 +23,18 @@ function RegisterForm() {
 	// TODO: add proper error handling here
 	const onRegister = () => {
 		const dbRef = firebaseDb;
-		const userCollectionRef = collection(firebaseDb, 'users');
-		console.log('registeration called');
 		createUserWithEmailAndPassword(getAuth(), email, password)
-			.then((credSnapshot) =>
-				setDoc(doc(dbRef, 'users', credSnapshot.user.uid), {
+			.then(async () => {
+				setDoc(doc(dbRef, 'users', getAuth().currentUser.uid), {
+					userId: getAuth().currentUser.uid,
 					name,
 					email,
-				})
-			)
-			.then(() => getDocs(userCollectionRef))
-			.then((snapshot) => console.log(snapshot))
-			.then(() => naviagte('/'))
+				});
+			})
+			.then(() => {
+				dispatch(getUserProfileFromAPI(getAuth().currentUser.uid));
+				naviagte('/');
+			})
 			.catch((error) => {
 				console.error('Error while registering ', error);
 			});
