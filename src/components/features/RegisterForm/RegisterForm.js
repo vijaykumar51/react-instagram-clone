@@ -1,12 +1,13 @@
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { firebaseDb } from '../../../services/auth/firebase-setup';
 import { Button, Icon, Input } from '../../core';
 import { StyledRegisterForm } from './RegisterForm.styled';
-import { getUserProfileFromAPI } from '../../../store/slices/userProfileSlice';
+import {
+	getUserProfileFromAPI,
+	saveUserProfilewithAPI,
+} from '../../../store/slices/userProfileSlice';
 
 function RegisterForm() {
 	const naviagte = useNavigate();
@@ -22,15 +23,15 @@ function RegisterForm() {
 
 	// TODO: add proper error handling here
 	const onRegister = () => {
-		const dbRef = firebaseDb;
 		createUserWithEmailAndPassword(getAuth(), email, password)
-			.then(async () => {
-				setDoc(doc(dbRef, 'users', getAuth().currentUser.uid), {
-					userId: getAuth().currentUser.uid,
-					name,
-					email,
-				});
-			})
+			.then(() =>
+				dispatch(
+					saveUserProfilewithAPI({
+						name,
+						email,
+					})
+				)
+			)
 			.then(() => {
 				dispatch(getUserProfileFromAPI(getAuth().currentUser.uid));
 				naviagte('/');
